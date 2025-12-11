@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/ubi-minimal:latest@sha256:61d5ad475048c2e655cd46d0a55dfeaec182cc3faa6348cb85989a7c9e196483
+FROM registry.redhat.io/ubi9/ubi-minimal:latest
 
 LABEL com.redhat.component="dpdk-base-container" \
     name="/openshift4/dpdk-base-rhel9" \
