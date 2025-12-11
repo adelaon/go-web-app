@@ -15,7 +15,7 @@ spec:
           params:
             - name: bundle
               # OLD reference - Renovate should update this
-              value: quay.io/redhat-appstudio-tekton-catalog/task-git-clone:0.1@sha256:abcd1234567890
+              value: quay.io/redhat-appstudio-tekton-catalog/task-git-clone:0.1@sha256:eeac8b6432f2e8e9b319572afeef51f225f443af80d9ead5916d7309f534cf3b
             - name: name
               value: git-clone
             - name: kind
@@ -27,7 +27,7 @@ spec:
           params:
             - name: bundle
               # OLD reference - Renovate should update this
-              value: quay.io/redhat-appstudio-tekton-catalog/task-buildah:0.1@sha256:abcd1234567890
+              value: quay.io/redhat-appstudio-tekton-catalog/task-buildah:0.7@sha256:745d799b67f799beac48c514a34fcbe853bf52a8b40e5d31107bac7c22a458bc
             - name: name
               value: buildah
             - name: kind
