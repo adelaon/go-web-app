@@ -1,16 +1,57 @@
 contentOrigin:
-  # Define the source of packages - path to your repo file
-  repofiles:
-    - ./redhat.repo
+  repos:
+    - repoid: ubi-9-for-$basearch-baseos-rpms
+      baseurl: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/$basearch/baseos/os
+      varsFromContainerfile: Dockerfile
+      sslverify: 1
+      priority: 1
+    - repoid: ubi-9-for-$basearch-appstream-rpms
+      baseurl: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/$basearch/appstream/os
+      varsFromContainerfile: Dockerfile
+      sslverify: 1
+      priority: 1
+    - repoid: rhel-9-for-$basearch-baseos-rpms
+      baseurl: https://cdn.redhat.com/content/dist/rhel9/{version}/$basearch/baseos/os
+      varsFromContainerfile: Dockerfile
+      sslverify: 1
+      sslcacert: /etc/rhsm/ca/redhat-uep.pem
+      sslclientkey: $SSL_CLIENT_KEY
+      sslclientcert: $SSL_CLIENT_CERT
+    - repoid: rhel-9-for-$basearch-appstream-rpms
+      baseurl: https://cdn.redhat.com/content/dist/rhel9/{version}/$basearch/appstream/os
+      varsFromContainerfile: Dockerfile
+      sslverify: 1
+      sslcacert: /etc/rhsm/ca/redhat-uep.pem
+      sslclientkey: $SSL_CLIENT_KEY
+      sslclientcert: $SSL_CLIENT_CERT
 
 packages:
-  # List of RPM packages to resolve
-  - openshift-clients
+  - bsdtar
+  - findutils
+  - groff-base
+  - glibc-locale-source
+  - glibc-minimal-langpack
+  - gettext
+  - rsync
+  - scl-utils
+  - tar
+  - unzip
+  - xz
+  - yum
+  - dpdk
+  - dpdk-devel
+  - dpdk-tools
+  - make
+  - rdma-core
+  - libibverbs
+  - git
+  - gcc
+  - which
+  - expect
 
 arches:
-  # Architectures for which packages should be resolved
-  - aarch64
   - x86_64
+  - aarch64
 
 context:
-  image: registry.redhat.io/ubi9/ubi-minimal:latest
+  image: registry.access.redhat.com/ubi9/ubi-minimal:latest@sha256:61d5ad475048c2e655cd46d0a55dfeaec182cc3faa6348cb85989a7c9e196483
