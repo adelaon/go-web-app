@@ -10,8 +10,11 @@ contentOrigin:
       priority: 1
 
 packages:
-  # List of RPM packages to resolve
-  - openshift-clients
+  - tar         # Core utility, usually in BaseOS
+  - gzip        # Core utility, usually in BaseOS
+  - git         # Version control, usually in AppStream
+  - python3     # Scripting language runtime, usually in AppStream
+  - jq          # JSON command-line processor, usually in AppStream
 
 arches:
   # Architectures for which packages should be resolved
