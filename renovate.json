@@ -9,17 +9,7 @@
   "gomod": {
     "recreateWhen": "always",
     "postUpgradeTasks": {
-      "commands": [
-        "echo === Certificate Validation Debug ===",
-        "cat /workspace/shared-data/prepare-cert.log",
-        "ls -la /workspace/shared-data/rpm-certs/",
-        "echo Validating key.pem:",
-        "openssl rsa -in /workspace/shared-data/rpm-certs/key.pem -check -noout",
-        "echo Validating cert.pem:",
-        "openssl x509 -in /workspace/shared-data/rpm-certs/cert.pem -noout -subject -dates",
-        "echo Running rpm-lockfile-prototype:",
-        "rpm-lockfile-prototype rpms.in.yaml"
-      ],
+      "commands": [ "rpm-lockfile-prototype rpms.in.yaml" ],
       "fileFilters": ["rpms.lock.yaml"]
     }
   }
