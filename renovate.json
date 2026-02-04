@@ -9,6 +9,6 @@
   "gomod": {
     "recreateWhen": "always",
     "automerge": true,
-    "requireTestsForPlatformAutomerge": false
+    "requireTestsForPlatformAutomerge": true
   }
 }
